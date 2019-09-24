@@ -11,8 +11,10 @@ from elasticsearch import Elasticsearch
 # disable warning if you are using self-signed certs and stuff
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
+
 def do_something_with_logs(logs):
     # process set of logs here
+
 
 # setup Elastic connection params
 es = Elasticsearch(
@@ -31,14 +33,14 @@ es = Elasticsearch(
 # we'll return 1000 results with first search and all subsequent scroll searches
 search_string = ("""
     {
-            "size": 1000,
-            "query": {
-                "bool": {
-                    "must": [
-                        {"term": { "field": "Search for this string." }}
-                    ]
-                }
-          }
+        "size": 1000,
+        "query": {
+            "bool": {
+                "must": [
+                    {"term": { "field": "Search for this string." }}
+                ]
+            }
+        }
     }""")
       
 # Two ways of running the initial query, we'll use POST
