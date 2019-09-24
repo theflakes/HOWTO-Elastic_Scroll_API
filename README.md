@@ -61,11 +61,11 @@ while scroll_size > 0:
     
     # build the POST body to retrieve the next set of logs using the above scroll_id
     body = ("""
-      {
+        {
           "scroll": "1m",
           "scroll_id": "%s"
-      }
-      """ % (sid))
+        }
+        """ % (sid))
       
     # you should use POST as scroll_id can be huge, a huge scroll_id will, over 4k, will error out
     # note that to retreive the rest of the results after the initial set uses the "/_search/scroll" uri
