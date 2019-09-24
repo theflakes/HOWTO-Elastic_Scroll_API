@@ -68,7 +68,7 @@ while scroll_size > 0:
         """ % (sid))
       
     # you should use POST as scroll_id can be huge, a huge scroll_id will, over 4k, will error out
-    # note that to retreive the rest of the results after the initial set uses the "/_search/scroll" uri
+    # note that to retreive the rest of the results after the initial set, use the "/_search/scroll" uri
     logs = self.es.transport.perform_request(method='POST', url='/_search/scroll', body=body)
     
     # how many logs were returned?, if 0 then while loop will exit
