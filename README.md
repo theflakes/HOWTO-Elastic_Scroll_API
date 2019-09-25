@@ -1,4 +1,4 @@
-# HOWTO-Elastic_Scroll_API
+# HOWTO: Elasticsearch Scroll API
 Example Python how to use the Elastic Scroll API to pull back more than the default max of 10k logs.  
 
 This is example code, it is not meant to work as a simple copy paste.
